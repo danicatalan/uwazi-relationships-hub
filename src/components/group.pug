@@ -33,15 +33,16 @@ mixin group(data)
                 div(class="item-type item-type-" + data.template.type)
                   span(class="item-type__name")= data.template.label
           div(class="item-connection")
-            p(class="connection-type connection-type-" + node.relationship.type)
-              i(class="fa fa-exchange")
-              span= node.relationship.label
-            - if(node.relationship.metadata && node.relationship.metadata.length > 0)
-              div(class="item-metadata")
-                each metadata in node.relationship.metadata
-                  dl
-                    dt= metadata.label
-                    dd= metadata.value
+            div(class="connection-data")
+              p(class="connection-type connection-type-" + node.relationship.type)
+                i(class="fa fa-exchange")
+                span= node.relationship.label
+              - if(node.relationship.metadata && node.relationship.metadata.length > 0)
+                div(class="item-metadata")
+                  each metadata in node.relationship.metadata
+                    dl
+                      dt= metadata.label
+                      dd= metadata.value
         div(class="target-connections")
           each connection in node.connections
             div(class="connection")

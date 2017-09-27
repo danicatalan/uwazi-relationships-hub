@@ -3968,13 +3968,15 @@ mark, .mark {
 .item-connection .item-metadata,
 .connection-data .item-metadata {
   border: 2px dotted #ccc;
-  border-top: 0;
+  border-top: 1px solid #ccc;
   display: flex;
   flex-direction: column;
-  width: 100%;
+  width: calc(100% + 2px);
+  margin: -1px;
   padding: 2px 15px 7px;
   border-bottom-right-radius: 5px;
-  border-bottom-left-radius: 5px; }
+  border-bottom-left-radius: 5px;
+  background: #fcfcfc; }
 
 .group {
   padding-bottom: 30px;
@@ -4014,26 +4016,30 @@ mark, .mark {
 
 .connection-data {
   position: relative;
-  margin: 0 15px; }
+  margin: 0 15px;
+  border: 1px solid #d7d7dc;
+  border-radius: 5px;
+  background: #eee; }
 
 .connection-type {
   width: 100%;
-  background: #eee;
   padding: 5px 15px;
   font-size: 12px;
   margin: 0;
-  border: 1px solid #d7d7dc;
-  border-radius: 5px;
   color: #777; }
   .connection-type .fa {
     margin-right: 5px; }
 
-.item + .item-connection .connection-type {
+.item-connection .connection-data {
+  margin: 0;
+  width: 100%; }
+
+.item + .item-connection .connection-data {
   border-top: 0;
   border-top-right-radius: 0;
   border-top-left-radius: 0; }
 
-.item-metadata + .connection-type {
+.connection-type:has( > .fa-exchange) {
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0; }
 
