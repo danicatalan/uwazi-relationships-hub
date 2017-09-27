@@ -1,0 +1,22 @@
+{
+  "name": "1709-connections",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server": "browser-sync start --config bs-config.js",
+    "styles": "./node_modules/.bin/node-sass --watch src/styles/styles.scss app/styles/styles.css",
+    "scripts": "cat src/scripts/*.js | ./node_modules/.bin/uglifyjs -o app/scripts/app.js",
+    "templates": "./node_modules/.bin/pug src -w -P -o app"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "^2.18.13",
+    "node-sass": "^4.5.3",
+    "pug": "^2.0.0-rc.4",
+    "pug-cli": "^1.0.0-alpha6",
+    "uglify-js": "^3.1.0"
+  }
+}

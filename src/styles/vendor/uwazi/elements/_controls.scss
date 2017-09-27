@@ -1,0 +1,157 @@
+.btn,
+.form-control,
+.input-group-addon {
+  font-size: $f-size;
+  transition: all 100ms;
+}
+
+@mixin btn ($color, $colorHover) {
+  background: $color;
+  border-color: $color;
+  
+  &:hover,
+  &:focus {
+    background: $colorHover;
+  }
+}
+
+.btn-primary {
+  @include btn($c-primary, $c-primary-dark);
+}
+
+.btn-default.btn-disabled {
+  &, &:hover, &:focus, &:active {
+    cursor: default;
+    background: $c-white;
+    border-color: $c-grey;
+    color: $c-grey-dark;
+  }
+}
+
+.btn-hover-success:hover {
+  background-color: $c-success;
+  border-color: $c-success-dark;
+  color: $c-white;
+}
+
+.btn-hover-danger:hover {
+  background-color: $c-danger;
+  border-color: $c-danger-dark;
+  color: $c-white;
+}
+
+.form-control {
+  height: 32px;
+  border-color: $c-grey;
+  box-shadow: none;
+}
+
+.form-group {
+  .required {
+    display: none;
+    margin: 5px 0;
+    color: $c-danger;
+  }
+
+  &.has-error .required {
+    display: inline;
+  }
+}
+
+.form-group-label {
+  font-size: $f-size-sm;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  color: $c-grey-dark;
+  margin-bottom: 5px;
+}
+
+.input-group {
+  label {
+    padding-left: 0;
+    background-color: $c-grey-light;
+    border-left: 0;
+    box-shadow: none;
+    cursor: pointer;
+  }
+}
+
+.input-group-addon:not(:first-child):not(:last-child),
+.input-group-btn:not(:first-child):not(:last-child),
+.input-group .form-control:not(:first-child):not(:last-child) {
+  border-right: 0;
+}
+
+.error {
+  display: none;
+}
+
+.form-group-radio.has-error {
+  color: $c-danger;
+}
+
+.has-error {
+  .input-group-addon {
+    position: relative;
+    background-color: $c-danger-light;
+    color: $c-danger;
+    border-color: $c-danger;
+  }
+
+  .form-control {
+    border-color: $c-danger;
+  }
+  .error {
+    display: block;
+    position: absolute;
+    top: 115%;
+    left: 0%;
+    font-size: $f-size-sm;
+    color: $c-danger;
+    .fa {
+      margin-right: 3px;
+    }
+  }
+}
+
+.validation-error {
+  color: $c-danger;
+  position: relative;
+  top: 1px;
+  height: 0;
+  font-weight: bold;
+  font-size: $f-size-sm;
+
+  &-centered {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+.error {
+  display: inherit;
+}
+
+.btn {
+  outline: none !important;
+  a {
+    color: $c-grey-dark;
+    text-decoration: none;
+  }
+}
+
+.form-control[disabled],
+.form-control[readonly],
+fieldset[disabled] .form-control {
+  background: $c-white;
+}
+
+.form-control[disabled],
+.form-control[readonly],
+fieldset[disabled] .form-control,
+.input-group-addon[disabled],
+input[type="radio"][disabled] ~ label,
+input[type="checkbox"][disabled] ~ label {
+    opacity: 0.3;
+    cursor: not-allowed;
+}

@@ -1,0 +1,70 @@
+mixin group(data)
+  div(class="group")
+    each node in data.nodes
+      - if(data.nodes.indexOf(node) == 0 && data.nodes.length > 1)
+        div(class="row")
+          div(class="source source-row")
+              div(class="item")
+                div(class="item-info")
+                  p(class="item-name")= data.name
+                - if(data.metadata.length > 0)
+                  div(class="item-metadata")
+                    each metadata in data.metadata
+                      dl
+                        dt= metadata.label
+                        dd= metadata.value
+                - if(data.template)
+                  div(class="item-type item-type-" + data.template.type)
+                    span(class="item-type__name")= data.template.label
+          div(class="target-connections")
+      div(class="row")
+        div(class="source")
+          - if(data.nodes.indexOf(node) == 0 && data.nodes.length == 1)
+            div(class="item")
+              div(class="item-info")
+                p(class="item-name")= data.name
+              - if(data.metadata.length > 0)
+                div(class="item-metadata")
+                  each metadata in data.metadata
+                    dl
+                      dt= metadata.label
+                      dd= metadata.value
+              - if(data.template)
+                div(class="item-type item-type-" + data.template.type)
+                  span(class="item-type__name")= data.template.label
+          div(class="item-connection")
+            p(class="connection-type connection-type-" + node.relationship.type)
+              i(class="fa fa-exchange")
+              span= node.relationship.label
+            - if(node.relationship.metadata && node.relationship.metadata.length > 0)
+              div(class="item-metadata")
+                each metadata in node.relationship.metadata
+                  dl
+                    dt= metadata.label
+                    dd= metadata.value
+        div(class="target-connections")
+          each connection in node.connections
+            div(class="connection")
+              div(class="connection-data")
+                p(class="connection-type connection-type-" + connection.relationship.type)
+                  i(class="fa fa-exchange")
+                  span= connection.relationship.label
+                - if(connection.relationship.metadata && connection.relationship.metadata.length > 0)
+                  //- div(class="item-metadata")
+                  //-   each metadata in connection.relationship.metadata
+                  //-     dl
+                  //-       dt= metadata.label
+                  //-       dd= metadata.value
+              div(class="item")
+                div(class="item-info")
+                  p(class="item-name")= connection.name
+                - if(connection.metadata && connection.metadata.length > 0)
+                  //- div(class="item-metadata")
+                  //-   each metadata in connection.metadata
+                  //-     dl
+                  //-       dt= metadata.label
+                  //-       dd= metadata.value
+                - if(connection.template)
+                  div(class="item-type item-type-" + connection.template.type)
+                    span(class="item-type__name")= connection.template.label
+      

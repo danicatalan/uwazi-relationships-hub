@@ -1,0 +1,36 @@
+doctype html
+html
+  head
+    title Uwazi
+    link(href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css", rel="stylesheet")
+    link(href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css", rel="stylesheet")
+    link(href="styles/styles.css", rel="stylesheet")
+    
+  body
+    div#app
+      div.content
+        mixin header-item(title, url, icon)
+          li.menuNav-item
+            if (icon)
+              a.btn.menuNav-btn(href=url, title=title)
+                i(class='fa fa-'+icon)
+            else
+              a.btn.menuNav-btn(href=url)= title
+            
+        header
+          h1.logotype
+            a(href="library.html") Uwazi
+          ul.menuNav
+            li.menuItems
+              ul.menuNav-list
+            li.menuActions
+              ul.menuNav-list
+                +header-item('Library', 'library.html', 'th')
+                +header-item('My files', 'my-files.html', 'cloud-upload')
+                +header-item('Settings', '#', 'cog')
+        div.app-content.container-fluid
+          div.row.panels-layout
+            block content
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.js')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js')
+    script(src="scripts/app.js")

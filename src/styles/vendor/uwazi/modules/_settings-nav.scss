@@ -1,0 +1,14 @@
+.navLinks {
+  @include draggable;
+}
+
+.NavlinksSettings {
+  .list-group-item {
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+  }
+  .panel .list-group .list-group-item .propery-form.expand {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}

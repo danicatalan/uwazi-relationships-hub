@@ -1,0 +1,82 @@
+.panel-default {
+  border-color: $c-grey-light;
+}
+
+.panel-default > .panel-heading {
+	font-weight: bold;
+	border-bottom-color: $c-grey-light;
+  background-color: $c-grey-lighten;
+  padding: 16px;
+}
+
+.panel > .list-group .list-group-item {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+    line-height: 24px;
+    border-color: $c-grey-light;
+    border-left-color: transparent;
+    outline: none;
+    box-shadow: none;
+}
+
+.list-group-item-actions {
+  white-space: nowrap;
+}
+
+.panel {
+  .list-group {
+    .list-group-item {
+      small {
+        margin-left: 5px;
+        font-size: 1em;
+        color: $c-grey-dark;
+        text-decoration: none;
+      }
+      .btn:not(:first-of-type) {
+        margin-left: 5px;
+      }
+
+      &.error {
+        display: block;
+        border: 1px solid $c-danger !important;
+        box-shadow: $box-shadow-danger !important;
+
+        .property-name, .property-name .fa {
+          color: $c-danger;
+        }
+
+        .validation-error {
+          margin-right: 5px;
+        }
+      }
+
+      .propery-form {
+        height: 0;
+        width: 100%;
+
+        &.expand {
+          height: auto;
+          padding: 15px 30px;
+          cursor: default;
+        }
+
+        & > div > .well:not(:last-child),
+        & > div > .row:not(:last-child) {
+          margin-bottom: 10px;
+        }
+      }
+
+      &.dragging {
+        opacity: 0;
+      }
+    }
+  }
+}
+
+.panel-footer {
+  display: block;
+}

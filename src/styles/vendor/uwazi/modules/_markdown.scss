@@ -1,0 +1,175 @@
+.markdownEditor {
+  position: relative;
+
+  textarea {
+    padding: 15px;
+    font-family: $f-mono;
+  }
+  .tab-nav {
+    position: absolute;
+    right: 0;
+    bottom: 100%;
+  }
+  .tab-link {
+    display: inline-block;
+    padding: 5px 5px 0;
+    font-size: $f-size-xs;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    cursor: pointer;
+    color: $c-grey-dark;
+    border-bottom: 1px dotted $c-white;
+    &:hover {
+      text-decoration: none;
+      color: $c-black;
+      border-bottom: 1px dotted $c-black;
+    }
+    &.tab-link-active {
+      color: $c-theme;
+      font-weight: bold;
+      border-bottom: 1px solid $c-theme;
+    }
+  }
+  .tab-content {
+    float: left;
+    width: 100%;
+  }
+}
+
+.markdownEditor,
+.markdownViewer {
+  h1 {
+    font-weight: 600;
+    font-size: 28px;
+    margin: 30px 0 30px;
+  }
+  h2 {
+    font-family: $f-regular;
+    font-size: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid $c-grey-light;
+    margin: 30px 0 30px;
+  }
+  h3 {
+    font-family: $f-regular;
+    font-size: 18px;
+    margin: 30px 0 15px;
+  }
+  blockquote {
+    max-width: 66%;
+    padding: 0;
+    font-style: italic;
+    font-weight: 300;
+    border: 0;
+    p {
+      font-size: 20px;
+    }
+  }
+  code {
+    padding: 3px 6px 2px;
+    position: relative;
+    top: -2px;
+    font-size: 12px;
+    margin-right: 4px;
+    color: $c-theme;
+    background-color: $c-theme-lighten;
+  }
+  p a,
+  td a {
+    display: inline;
+    color: $c-theme;
+    border-bottom: 1px dotted $c-theme-light;
+    text-decoration: none !important;
+    padding: 0 2px;
+    &:hover {
+      color: $c-theme;
+      border-bottom: 1px solid $c-theme;
+    }
+  }
+  img {
+    max-width: 100%;
+  }
+  p, li {
+    font-family: $f-regular;
+    font-size: 14px;
+    line-height: 1.6em;
+  }
+  li {
+    margin-bottom: 5px;
+  }
+
+  table {
+    width: 100%;
+    table-layout: fixed;
+  }
+  th, td {
+    padding: 7px 10px;
+  }
+  th {
+    font-family: $f-special;
+    font-weight: 300;
+    background-color: $c-theme-lighten;
+  }
+  th:not(:last-of-type) {
+    border-right: 1px solid $c-white;
+  }
+  tr:not(:last-of-type) {
+    border-bottom: 1px solid $c-grey-light;
+  }
+}
+
+.panel-body {
+  .markdownEditor {
+    margin-top: 15px;
+  }
+  .tab-link {
+    padding: 15px 15px 0;
+    font-size: $f-size-sm;
+  }
+}
+
+.side-panel {
+  .markdownViewer,
+  .markdownEditor {
+    p {
+      font-size: $f-size;
+    }
+  }
+}
+
+.item {
+  .markdownViewer,
+  .markdownEditor {
+    p {
+      font-size: $f-size-sm;
+    }
+  }
+}
+
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+.video-container iframe,
+.video-container object,
+.video-container embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.page-viewer .pageSection > *:not(.hero) {
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.page-viewer .pageSection .video-container{
+  padding-bottom: 36%;
+}

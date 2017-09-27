@@ -1,0 +1,33 @@
+#app {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+  height: 100vh;
+  padding-top: $header-height;
+  overflow: hidden;
+}
+
+.container {
+  max-width: 960px;
+}
+.container-fluid {
+  margin-right: 0;
+  margin-left: 0;
+  flex: 1;
+  height: 100%;
+}
+
+@media (max-width: 1023px) {
+  .col-xs-12 {
+    width: 100%;
+  }
+}
+
+.app-content {
+  overflow: hidden;
+}
+
+.app-content > div {
+  height: 100%;
+}

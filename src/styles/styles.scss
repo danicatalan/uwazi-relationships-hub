@@ -1,0 +1,265 @@
+@import "vendor/uwazi/styles";
+
+.entity-viewer {
+  background-color: #fcfcfc;
+}
+
+.app-content > div {
+  overflow: auto;
+}
+.menuNav-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  margin-top: 15px;
+}
+
+.item {
+  padding-bottom: 0;
+  margin-bottom: 0;
+  width: 100%;
+}
+
+.item-connection {
+  position: relative;
+  border: 0;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0;
+  background: transparent;
+  
+  dl {
+    margin: 0;
+  }
+}
+
+.item-type {
+  margin: 0 15px 15px;
+}
+
+.item-connection, 
+.connection-data {  
+  .item-metadata {
+    border: 1px dotted #ccc;
+    border-top: 0;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 2px 15px 7px;
+  }
+}
+
+.group {
+  margin-bottom: 75px;
+  .row {
+    display: flex;
+    margin-bottom: 15px;
+    
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  .source {
+    flex: 1;
+  }
+  .target-connections {
+    flex: 2;
+  }
+}
+
+.source {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding-right: 15px;
+}
+
+.target-connections {
+  display: flex;
+  flex-direction: column;
+}
+
+.connection {
+  display: flex;
+  align-items: flex-start;
+  padding-bottom: 15px;
+  position: relative;
+  
+  & > div {
+    flex: 1;
+  }
+  &:last-child {
+    padding-bottom: 0;
+  }
+}
+
+.connection-data {
+  position: relative;
+  margin: 0 15px;
+  
+}
+
+.connection-type {
+  width: 100%;
+  background: #eee;
+  padding: 5px 15px;
+  font-size: 12px;
+  margin: 0;
+  border: 1px dotted #ccc;
+  color: #777;
+  
+  .fa {
+    margin-right: 5px;
+  }
+}
+
+.item + .item-connection .connection-type {
+  border-top: 0;
+}
+
+
+
+
+
+
+
+
+.source:not(.source-row) {
+  &:after {
+    content: '';
+    display: block;
+    background: #ccc;
+    position: absolute;
+    height: 1px;
+    width: 15px;
+    top: 13px;
+    right: 0;
+  }
+  
+  &:before {
+    content: '';
+    display: block;
+    border: 1px solid #ccc;
+    background: #fcfcfc;
+    z-index: 1;
+    position: absolute;
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    top: 6px;
+    right: -8px;
+  }
+}
+
+.target-connections {
+  .connection-data:before {
+    content: '';
+    display: block;
+    background: #ccc;
+    position: absolute;
+    height: 1px;
+    width: 15px;
+    top: 13px;
+    right: 100%;
+  }
+  .connection-data:after {
+    content: '';
+    display: block;
+    background: #ccc;
+    position: absolute;
+    height: 1px;
+    width: 15px;
+    top: 13px;
+    left: 100%;
+  }
+}
+
+.connection {
+  &:before {
+    content: '';
+    background: #ccc;
+    position: absolute;
+    top: 0;
+    height: 13px;
+    width: 1px;
+    left: -1px;
+  }
+  &:after {
+    content: '';
+    background: #ccc;
+    position: absolute;
+    bottom: 0;
+    top: 14px;
+    width: 1px;
+    left: -1px;
+  }
+  &:first-child:before {
+    content: '';
+    background: #fcfcfc;
+    position: absolute;
+    top: 0;
+    height: 13px;
+    width: 1px;
+    left: -1px;
+  }
+  &:last-child:after {
+    content: '';
+    background: #fcfcfc;
+    position: absolute;
+    bottom: 0;
+    top: 14px;
+    width: 1px;
+    left: -1px;
+  }
+}
+
+
+
+
+
+
+
+
+$c-type-0:            #C03B22;
+$c-type-1:            #D9534F;
+$c-type-2:            #E91E63;
+$c-type-3:            #A03AB1;
+$c-type-4:            #6F46B8;
+$c-type-5:            #3F51B5;
+$c-type-6:            #2196F3;
+$c-type-7:            #37BDCf;
+$c-type-8:            #359990;
+$c-type-9:            #5CB85C;
+$c-type-10:           #8BC34A;
+$c-type-11:           #CDDC39;
+$c-type-12:           #F7E64E;
+$c-type-13:           #F0AD4E;
+$c-type-14:           #EC9920;
+$c-type-15:           #E46841;
+$c-type-16:           #795548;
+$c-type-17:           #9E9E9E;
+$c-type-18:           #607D8B;
+
+.connection-type-0 { color: $c-type-0; }
+.connection-type-1 { color: $c-type-1; }
+.connection-type-2 { color: $c-type-10; }
+.connection-type-3 { color: $c-type-3; }
+.connection-type-4 { color: $c-type-4; }
+.connection-type-5 { color: $c-type-5; }
+.connection-type-6 { color: $c-type-6; }
+.connection-type-7 { color: $c-type-7; }
+.connection-type-8 { color: $c-type-8; }
+.connection-type-9 { color: $c-type-9; }
+.connection-type-10 { color: $c-type-10; }
+.connection-type-11 { color: $c-type-11; }
+.connection-type-12 { color: $c-type-12; }
+.connection-type-13 { color: $c-type-13; }
+.connection-type-14 { color: $c-type-14; }
+.connection-type-15 { color: $c-type-15; }
+.connection-type-16 { color: $c-type-16; }
+.connection-type-17 { color: $c-type-17; }
+.connection-type-18 { color: $c-type-18; }

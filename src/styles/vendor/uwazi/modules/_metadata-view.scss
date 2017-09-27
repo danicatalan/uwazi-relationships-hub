@@ -1,0 +1,62 @@
+.sidepanel-body,
+.entity-viewer {
+  .view {
+    padding: 0;
+    dl {
+      display: table;
+      width: 100%;
+      padding: 15px;
+      border-top: 1px solid $c-grey-lighten;
+      margin: 0;
+    }
+    dl:first-child {
+      border-top: 0;
+    }
+    dt {
+      float: left;
+      width: 100%;
+      font-weight: 300;
+      font-style: normal;
+      font-family: $f-special;
+      margin-bottom: 5px;
+    }
+    dd {
+      float: left;
+      width: 100%;
+      margin: 0;
+      > ul {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+      }
+      > ul.multiline li {
+        margin: 5px 0;
+      }
+
+      > ul.comma-separated li {
+        display: inline-block;
+        margin: 5px 10px 0 0;
+        &:not(:last-child):after {
+          content: ',';
+        }
+      }
+    }
+    a {
+      color: $c-black;
+      border-bottom: 1px dotted $c-grey;
+      text-decoration: none !important;
+
+      &:hover {
+        border-color: $c-black;
+      }
+    }
+  }
+  .btn-block {
+    padding: 10px 15px;
+    margin: 15px 0;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: $f-size-sm;
+    font-weight: bold;
+  }
+}

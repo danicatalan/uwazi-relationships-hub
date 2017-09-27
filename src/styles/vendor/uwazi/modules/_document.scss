@@ -1,0 +1,257 @@
+.document-viewer {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 15px;
+  overflow-y: scroll;
+  transition: all 500ms;
+
+    @media(min-width: 1024px) {
+      &.with-panel,
+      &.is-active {
+      width: calc(100% - 400px);
+    }
+  }
+
+  .cs-loader {
+    height: 80px;
+  }
+
+  // Hack to solve issue selecting text in some documents
+  div.c { pointer-events: none; }
+  div.c>* { pointer-events: auto; padding-right: 100px; }
+}
+
+.document-article {
+  padding: 80px 120px;
+  background: $c-white;
+  border-radius: 0 !important;
+  border-bottom: 1px solid $c-grey;
+  box-shadow: $box-shadow;
+  position: relative;
+  font-size: $f-size-lg;
+  font-family: sans-serif;
+}
+
+.document-viewer {
+  a.reference {
+    text-decoration: none !important;
+    color: inherit;
+  }
+
+  &.connections a.reference {
+    background-color: transparentize(yellow, 0.8);
+  }
+
+  a.highlighted,
+  &.connections a.highlighted {
+    background-color: transparentize(yellow, 0.8);
+    cursor: pointer;
+  }
+
+  &.connections a.is-active {
+    background-color: transparentize(yellow, 0.4);
+    cursor: pointer;
+  }
+}
+
+mark, .mark {
+  color: transparent !important;
+  background-color: transparentize(yellow, 0.8) !important;
+  padding: 0 !important;
+  mark, .mark {
+    background-color: transparent !important;
+  }
+}
+
+.relation-dialog {
+  position: absolute;
+  right: -30px;
+  transform: translateX(100%) translateY(-30%);
+  background: $c-theme-lighten !important;
+  border: 1px solid $c-grey !important;
+  color: $c-black !important;
+  padding: 5px 10px;
+  opacity: 0;
+  transition: right 500ms, opacity 0ms;
+  width: 33%;
+}
+
+.side-panel {
+  .item {
+    &.relationship-selected {
+      background: $c-success;
+    }
+
+    &.disabled {
+      opacity: 0.6;
+      cursor: inherit;
+    }
+  }
+}
+
+.relationship-steps {
+  display: flex;
+
+  &.is-fixed {
+    display: flex;
+    position: fixed;
+    z-index: 1;
+    background: linear-gradient($c-background 0%, $c-background 70%, transparent 100%);
+    top: $header-height;
+    width: 100%;
+    max-width: 900px;
+    left: 0;
+    padding: 15px;
+    @media(min-width: 1024px) {
+      left: auto;
+      padding: 15px 0;
+    }
+  }
+
+  .btn {
+    padding: 5px 10px;
+    margin: 12px 10px 12px 0;
+    font-size: 11px;
+  }
+  h2 {
+    font-size: $f-size-sm;
+    padding-left: 20px;
+    position: relative;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    small {
+      position: absolute;
+      top: -2px;
+      left: 0;
+      height: 16px;
+      line-height: 15px;
+      border: 1px solid $c-grey;
+      color: $c-grey-dark;
+      width: 16px;
+      text-align: center;
+      border-radius: 50%;
+      padding-left: 2px;
+    }
+  }
+  button i {
+    padding-right: 4px;
+  }
+}
+
+.connections-list {
+  list-style-type: none;
+  line-height: 24px;
+  padding: 15px;
+  margin: 0 -15px;
+  color: $c-grey-dark;
+  border-bottom: 1px solid $c-grey-lighten;
+  overflow-y: auto;
+  max-height: 150px;
+
+  li {
+    cursor: pointer;
+  }
+  
+  .fa {
+    width: 20px;
+    color: $c-grey-light;
+  }
+
+  .fa.fa-check {
+    color: $c-success;
+  }
+}
+
+.search-form {
+  .form-group {
+    position: relative;
+    margin: 0 -15px;
+    .fa {
+      position: absolute;
+      top: 15px;
+      left: 15px;
+      color: $c-black;
+      cursor: pointer;
+    }
+  }
+  .form-control {
+    padding-left: 40px;
+    height: $header-height;
+    line-height: $header-height;
+    border-radius: 0;
+    border: 0;
+    color: $c-black;
+    box-shadow: none !important;
+    @include placeholder($c-black);
+
+    &:focus {
+      background: transparent;
+      @include placeholder(transparent);
+    }
+  }
+}
+
+.create-reference {
+  .item {
+    -webkit-flex-direction: row;
+    flex-direction: row;
+    min-height: auto;
+    padding: 5px 15px 5px 35px;
+    border-color: $c-grey-light !important;
+
+    .item-name {
+      font-family: $f-regular;
+      color: $c-grey-dark;
+    }
+
+    &::after {
+      content: '\F096';
+      font-family: FontAwesome;
+      text-rendering: auto;
+      -webkit-font-smoothing: antialiased;
+      position: absolute;
+      top: 50%;
+      left: 15px;
+      font-size: $f-size-lg;
+      color: $c-grey-light;
+      transform: translateY(-50%);
+    }
+
+    &.is-selected {
+      box-shadow: none;
+      font-weight: bold;
+      &:after {
+        content: '\f00c';
+        color: $c-success;
+      }
+
+      .item-name {
+        color: $c-black;
+      }
+    }
+    
+    .search-form {
+      margin: 0 -15px;
+    }
+  }
+  .item-info {
+    padding: 0;
+  }
+  .item-actions {
+    position: relative;
+    height: auto;
+    padding: 0;
+    margin-left: 15px;
+  }
+  .item-type {
+    width: auto;
+    max-width: 75px;
+  }
+  .cs-loader-container{
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+    overflow: hidden;
+  }
+}
