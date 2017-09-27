@@ -26,18 +26,3 @@ $(".dropdown-groups li").click(function(){
   dropdownGroups.element.hide();
   dropdownGroups.state = false;
 });
-
-
-
-
-
-
-$(".filter-list li").click(function(){
-  var target = $(this).find("span").text();
-  var targetElement = "#node-" + target.toLowerCase();
-  
-  $(".node").hide();
-  $(targetElement).show();
-  
-  $(".filter-list b").text(target);
-});
