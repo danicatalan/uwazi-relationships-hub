@@ -23,7 +23,7 @@ mixin group(data)
             div(class="item")
               div(class="item-info")
                 p(class="item-name")= data.name
-              - if(data.metadata.length > 0)
+              - if(data.metadata && data.metadata.length > 0)
                 div(class="item-metadata")
                   each metadata in data.metadata
                     dl

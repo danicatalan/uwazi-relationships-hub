@@ -14,9 +14,11 @@ $(".dropdown-groups .btn").click(function(){
 
 $(".dropdown-groups li").click(function(){
   var target = $(this).text();
-  var targetElement = "#group-" + target.toLowerCase();
+  var targetElement = "#groupBy" + target;
   
-  $(".connections").hide();
+  console.log(targetElement);
+  
+  $(".group-wrapper").hide();
   $(targetElement).show();
   
   $(".dropdown-groups b").text(target);

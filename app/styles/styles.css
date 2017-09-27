@@ -3928,6 +3928,25 @@ mark, .mark {
 .container {
   margin-top: 15px; }
 
+.dropdown {
+  margin: 15px 5px; }
+  .dropdown a {
+    font-size: 16px; }
+    .dropdown a b {
+      margin-left: 5px; }
+  .dropdown .fa {
+    margin-left: 10px; }
+
+.dropdown-list {
+  position: absolute;
+  z-index: 1;
+  background: white;
+  padding: 15px;
+  border-radius: 3px;
+  border: 1px solid #ccc;
+  margin-top: 1px;
+  list-style: none; }
+
 .item {
   padding-bottom: 0;
   margin-bottom: 0;
