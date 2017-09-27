@@ -28,6 +28,10 @@ block content
         include data/zorlakay/groupByEvent.pug
         each group in groupByEvent
           +group(group)
+      div(id="groupByVictim" class="group-wrapper" style="display: none;")  
+        include data/zorlakay/groupByVictim.pug
+        each group in groupByVictim
+          +group(group)
       div(id="groupBySuspect" class="group-wrapper" style="display: none;")  
         include data/zorlakay/groupBySuspect.pug
         each group in groupBySuspect

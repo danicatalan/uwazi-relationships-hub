@@ -48,6 +48,7 @@
 .item {
   padding-bottom: 0;
   margin-bottom: 0;
+  margin-right: 0 !important;
   width: 100%;
 }
 
@@ -174,24 +175,23 @@
   border-bottom-left-radius: 0;
 }
 
-.connection {
-  .item {
-      display: flex;
-      flex-direction: row;
-      min-height: 0;
-      padding: 5px;
-      margin-right: 0;
-  }
-
-  .item-type {
-    margin: 0;
-    flex: 0;
-  }
-
-  .item-info {
-    padding: 0;  
-  }
+.item-compact {
+    display: flex;
+    flex-direction: row;
+    min-height: 0;
+    .item-type {
+      margin: 5px;
+      flex: 0;
+    }
+    
+    .item-info {
+      padding: 5px;  
+    }
+    .item-metadata {
+      display: none;
+    }
 }
+
 
 
 
