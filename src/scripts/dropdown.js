@@ -15,14 +15,12 @@ $(".dropdown-groups .btn").click(function(){
 $(".dropdown-groups li").click(function(){
   var target = $(this).text();
   var targetElement = "#groupBy" + target;
-  
-  console.log(targetElement);
-  
+
   $(".group-wrapper").hide();
   $(targetElement).show();
-  
+
   $(".dropdown-groups b").text(target);
-  
+
   dropdownGroups.element.hide();
   dropdownGroups.state = false;
 });

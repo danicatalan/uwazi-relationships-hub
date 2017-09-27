@@ -3929,7 +3929,8 @@ mark, .mark {
   margin-top: 15px; }
 
 .dropdown {
-  margin-bottom: 15px; }
+  margin-bottom: 15px;
+  margin-right: 150px; }
   .dropdown a {
     font-size: 16px; }
     .dropdown a b {
@@ -3946,6 +3947,10 @@ mark, .mark {
   border: 1px solid #ccc;
   margin-top: 1px;
   list-style: none; }
+
+.metadata-swtich {
+  float: right;
+  margin-top: -47px; }
 
 .item {
   padding-bottom: 0;
@@ -3969,7 +3974,7 @@ mark, .mark {
 .item-connection .item-metadata,
 .connection-data .item-metadata {
   border: 1px dashed #ccc;
-  border-top: 1px dashed #ccc;
+  border-top: 1px dashed #e0e0e0;
   display: flex;
   flex-direction: column;
   width: calc(100% + 2px);

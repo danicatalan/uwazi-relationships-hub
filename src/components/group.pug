@@ -50,12 +50,12 @@ mixin group(data)
                 p(class="connection-type connection-type-" + connection.relationship.type)
                   i(class="fa fa-exchange")
                   span= connection.relationship.label
-                //- - if(connection.relationship.metadata && connection.relationship.metadata.length > 0)
-                //-   div(class="item-metadata")
-                //-     each metadata in connection.relationship.metadata
-                //-       dl
-                //-         dt= metadata.label
-                //-         dd= metadata.value
+                - if(connection.relationship.metadata && connection.relationship.metadata.length > 0)
+                  div(class="item-metadata" style="display: none")
+                    each metadata in connection.relationship.metadata
+                      dl
+                        dt= metadata.label
+                        dd= metadata.value
               div(class="item item-compact")
                 div(class="item-info")
                   p(class="item-name")= connection.name
@@ -68,4 +68,3 @@ mixin group(data)
                 - if(connection.template)
                   div(class="item-type item-type-" + connection.template.type)
                     span(class="item-type__name")= connection.template.label
-      

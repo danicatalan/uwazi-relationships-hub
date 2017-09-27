@@ -22,32 +22,42 @@ block content
                 a(href="#") Victim
               li
                 a(href="#") Suspect
-    
+              li
+                a(href="#") Showcase
+        div(class="metadata-swtich")
+          a(id="toggleMetadata" class="btn btn-default")
+            i(class="fa fa-expand")
+            span &nbsp;&nbsp;Expand
+
     div(class="container")
       div(id="groupByEvent" class="group-wrapper")
         include data/zorlakay/groupByEvent.pug
         each group in groupByEvent
           +group(group)
-      div(id="groupByVictim" class="group-wrapper" style="display: none;")  
+      div(id="groupByVictim" class="group-wrapper" style="display: none;")
         include data/zorlakay/groupByVictim.pug
         each group in groupByVictim
           +group(group)
-      div(id="groupBySuspect" class="group-wrapper" style="display: none;")  
+      div(id="groupBySuspect" class="group-wrapper" style="display: none;")
         include data/zorlakay/groupBySuspect.pug
         each group in groupBySuspect
+          +group(group)
+      div(id="groupByShowcase" class="group-wrapper" style="display: none;")
+        include data/zorlakay/firstTest.pug
+        each group in firstTest
           +group(group)
 
   aside(class="side-panel entity-connections entity-connections is-hidden")
     ul(class="multiselect")
       li(class="multiselect-item")
-        a(href="#") 
+        a(href="#")
           i(class="fa fa-square-o")
           span All
       li(class="multiselect-item")
-        a(href="#") 
+        a(href="#")
           i(class="fa fa-check")
           span Events
       li(class="multiselect-item")
-        a(href="#") 
+        a(href="#")
           i(class="fa fa-square-o")
           span Bibliography
