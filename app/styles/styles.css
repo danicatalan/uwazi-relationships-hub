@@ -3969,7 +3969,7 @@ mark, .mark {
 .item-connection .item-metadata,
 .connection-data .item-metadata {
   border: 1px dashed #ccc;
-  border-top: 1px solid #ccc;
+  border-top: 1px dashed #ccc;
   display: flex;
   flex-direction: column;
   width: calc(100% + 2px);
@@ -4070,7 +4070,7 @@ mark, .mark {
   content: '';
   display: block;
   border: 1px solid #ccc;
-  background: #eee;
+  background: #ccc;
   z-index: 1;
   position: absolute;
   height: 15px;
