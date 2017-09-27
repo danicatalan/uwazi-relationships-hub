@@ -53,7 +53,12 @@
 }
 
 .group {
-  margin-bottom: 75px;
+  padding-bottom: 30px;
+  margin-bottom: 30px;
+  &:not(:last-child) {
+    border-bottom: 1px solid #ccc;
+  }
+  
   .row {
     display: flex;
     margin-bottom: 15px;
@@ -121,6 +126,26 @@
   border-top: 0;
 }
 
+.connection {
+  .item {
+      display: flex;
+      flex-direction: row;
+      min-height: 0;
+      padding: 5px;
+  }
+
+  .item-type {
+    margin: 0 10px 0 0;
+    flex: 0;
+    order: 0;
+  }
+
+  .item-info {
+    padding: 0;  
+    order: 1;
+  }
+}
+
 
 
 
@@ -144,14 +169,14 @@
     content: '';
     display: block;
     border: 1px solid #ccc;
-    background: #fcfcfc;
+    background: #eee;
     z-index: 1;
     position: absolute;
     height: 15px;
     width: 15px;
     border-radius: 50%;
     top: 6px;
-    right: -8px;
+    right: -7px;
   }
 }
 
