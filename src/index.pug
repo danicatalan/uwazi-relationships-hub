@@ -3,25 +3,47 @@ extends layout/app.pug
 include components/group.pug
 
 block content
-  div(class="container")
-    div(class="dropdown dropdown-groups")
-        a(class="btn btn-default" href="#") Grouped by
-          b Event
-          i(class="fa fa-caret-down")
-        ul(class="dropdown-list", style="display: none")
-          li
-            a(href="#") Event
-          li
-            a(href="#") Victim
-          li
-            a(href="#") Suspect
-  
-  div(class="container")
-    div(id="groupByEvent" class="group-wrapper")
-      include data/zorlakay/groupByEvent.pug
-      each group in groupByEvent
-        +group(group)
-    div(id="groupBySuspect" class="group-wrapper" style="display: none;")  
-      include data/zorlakay/groupBySuspect.pug
-      each group in groupBySuspect
-        +group(group)
+  div(class="content-header content-header-entity")
+    div(class="content-header-title")
+      h1(class="item-name") Abdo Yamik, Bahri Şimşek, Behçet Tutuş, Celal Aziz Aydogdu, Hasan Avar, Mehmet Salih Akdeniz, Mehmet Şah Atala, Mehmet Şerif Avar, Nesrettin Yerlikaya, Umit Taş, Turan Demir
+      span(class="item-type item-type-6", style="margin: 0")
+        span(class="item-type__name") Case
+  div(class="entity-viewer")
+    div(class="container")
+      div
+        div(class="dropdown dropdown-groups")
+            a(class="btn btn-default" href="#") Grouped by
+              b Event
+              i(class="fa fa-caret-down")
+            ul(class="dropdown-list", style="display: none")
+              li
+                a(href="#") Event
+              li
+                a(href="#") Victim
+              li
+                a(href="#") Suspect
+    
+    div(class="container")
+      div(id="groupByEvent" class="group-wrapper")
+        include data/zorlakay/groupByEvent.pug
+        each group in groupByEvent
+          +group(group)
+      div(id="groupBySuspect" class="group-wrapper" style="display: none;")  
+        include data/zorlakay/groupBySuspect.pug
+        each group in groupBySuspect
+          +group(group)
+
+  aside(class="side-panel entity-connections entity-connections is-hidden")
+    ul(class="multiselect")
+      li(class="multiselect-item")
+        a(href="#") 
+          i(class="fa fa-square-o")
+          span All
+      li(class="multiselect-item")
+        a(href="#") 
+          i(class="fa fa-check")
+          span Events
+      li(class="multiselect-item")
+        a(href="#") 
+          i(class="fa fa-square-o")
+          span Bibliography

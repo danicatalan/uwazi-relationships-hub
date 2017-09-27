@@ -3929,7 +3929,7 @@ mark, .mark {
   margin-top: 15px; }
 
 .dropdown {
-  margin: 15px 5px; }
+  margin-bottom: 15px; }
   .dropdown a {
     font-size: 16px; }
     .dropdown a b {
@@ -3967,22 +3967,24 @@ mark, .mark {
 
 .item-connection .item-metadata,
 .connection-data .item-metadata {
-  border: 1px dotted #ccc;
+  border: 2px dotted #ccc;
   border-top: 0;
   display: flex;
   flex-direction: column;
   width: 100%;
-  padding: 2px 15px 7px; }
+  padding: 2px 15px 7px;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px; }
 
 .group {
   padding-bottom: 30px;
   margin-bottom: 30px; }
   .group:not(:last-child) {
-    border-bottom: 1px solid #ccc; }
-  .group .row {
+    border-bottom: 2px dotted #ccc; }
+  .group > div {
     display: flex;
     margin-bottom: 15px; }
-    .group .row:last-child {
+    .group > div:last-child {
       margin-bottom: 0; }
   .group .source {
     flex: 1; }
@@ -4020,19 +4022,27 @@ mark, .mark {
   padding: 5px 15px;
   font-size: 12px;
   margin: 0;
-  border: 1px dotted #ccc;
+  border: 1px solid #d7d7dc;
+  border-radius: 5px;
   color: #777; }
   .connection-type .fa {
     margin-right: 5px; }
 
 .item + .item-connection .connection-type {
-  border-top: 0; }
+  border-top: 0;
+  border-top-right-radius: 0;
+  border-top-left-radius: 0; }
+
+.item-metadata + .connection-type {
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0; }
 
 .connection .item {
   display: flex;
   flex-direction: row;
   min-height: 0;
-  padding: 5px; }
+  padding: 5px;
+  margin-right: 0; }
 
 .connection .item-type {
   margin: 0;
@@ -4119,6 +4129,26 @@ mark, .mark {
   top: 14px;
   width: 1px;
   left: -1px; }
+
+.multiselect {
+  padding-top: 15px; }
+
+.multiselect-item {
+  padding: 5px;
+  margin: 0 -5px; }
+
+.multiselect-item a {
+  color: #444;
+  padding: 0px 15px;
+  font-weight: bold;
+  display: inline-block;
+  line-height: 1.2em;
+  font-size: 13px; }
+  .multiselect-item a .fa {
+    margin-right: 10px;
+    color: #ccc; }
+  .multiselect-item a .fa-check {
+    color: #5CB85C; }
 
 .connection-type-0 {
   color: #C03B22; }

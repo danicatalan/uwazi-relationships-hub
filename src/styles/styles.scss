@@ -19,7 +19,7 @@
 
 
 .dropdown {
-  margin: 15px 5px;
+  margin-bottom: 15px;
   a {
     font-size: 16px;
     
@@ -71,12 +71,14 @@
 .item-connection, 
 .connection-data {  
   .item-metadata {
-    border: 1px dotted #ccc;
+    border: 2px dotted #ccc;
     border-top: 0;
     display: flex;
     flex-direction: column;
     width: 100%;
     padding: 2px 15px 7px;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
   }
 }
 
@@ -84,10 +86,10 @@
   padding-bottom: 30px;
   margin-bottom: 30px;
   &:not(:last-child) {
-    border-bottom: 1px solid #ccc;
+    border-bottom: 2px dotted #ccc;
   }
   
-  .row {
+  > div {
     display: flex;
     margin-bottom: 15px;
     
@@ -142,7 +144,8 @@
   padding: 5px 15px;
   font-size: 12px;
   margin: 0;
-  border: 1px dotted #ccc;
+  border: 1px solid #d7d7dc;
+  border-radius: 5px;
   color: #777;
   
   .fa {
@@ -152,6 +155,13 @@
 
 .item + .item-connection .connection-type {
   border-top: 0;
+  border-top-right-radius: 0;
+  border-top-left-radius: 0;
+}
+
+.item-metadata + .connection-type {
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
 }
 
 .connection {
@@ -160,6 +170,7 @@
       flex-direction: row;
       min-height: 0;
       padding: 5px;
+      margin-right: 0;
   }
 
   .item-type {
@@ -272,8 +283,31 @@
 
 
 
+.multiselect {
+  padding-top: 15px;
+}
 
-
+.multiselect-item {
+  padding: 5px;
+  margin: 0 -5px;
+}
+.multiselect-item a {
+  color: #444;
+  padding: 0px 15px;
+  font-weight: bold;
+  display: inline-block;
+  line-height: 1.2em;
+  font-size: 13px;
+  
+  .fa {
+    margin-right: 10px;
+    color: #ccc;
+  }
+  
+  .fa-check {
+    color: #5CB85C;
+  }
+}
 
 $c-type-0:            #C03B22;
 $c-type-1:            #D9534F;
