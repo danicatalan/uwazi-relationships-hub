@@ -14,7 +14,7 @@ $(".dropdown-groups .btn").click(function(){
 
 $(".dropdown-groups li").click(function(){
   var target = $(this).text();
-  var targetElement = "#groupBy" + target;
+  var targetElement = "#groupBy" + target.replace(/\s/g, '');
 
   $(".group-wrapper").hide();
   $(targetElement).show();

@@ -19,7 +19,7 @@ block content
               li
                 a(href="#") Event
               li
-                a(href="#") Victim
+                a(href="#") Lost person
               li
                 a(href="#") Suspect
               li
@@ -34,7 +34,7 @@ block content
         include data/zorlakay/groupByEvent.pug
         each group in groupByEvent
           +group(group)
-      div(id="groupByVictim" class="group-wrapper" style="display: none;")
+      div(id="groupByLostperson" class="group-wrapper" style="display: none;")
         include data/zorlakay/groupByVictim.pug
         each group in groupByVictim
           +group(group)
