@@ -242,5 +242,37 @@
           ]
         }
       ]
+    },
+    {
+      name: "Jaume Cardona",
+      template: {
+        type: 0,
+        label: "Victim"
+      },
+      metadata: [
+        {label: "Date of Birth", value: "1982-10-05"},
+        {label: "Profession", value: "Key Account Manager"}
+      ],
+      nodes: [
+        {
+          relationship: {
+            type: 0,
+            label: "Lost person"
+          },
+          connections: [
+            {
+              name: "Dani Catalan",
+              metadata: [
+                 {label: "Date of Birth", value: "1977-07-13"}
+              ],
+              template: {
+                type: 2,
+                label: "Person"
+              },
+              relationship: {}
+            },
+          ]
+        }
+      ]
     }
   ];
