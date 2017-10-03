@@ -110,7 +110,7 @@
     flex: 1;
   }
   .target-connections {
-    flex: 2;
+    flex: 1;
   }
 }
 
@@ -119,7 +119,7 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  padding-right: 15px;
+  padding-right: 50px;
 }
 
 .target-connections {
@@ -129,8 +129,9 @@
 
 .connection {
   display: flex;
+  flex-direction: column;
   align-items: flex-start;
-  padding-bottom: 15px;
+  padding: 0 15px 15px 50px;
   position: relative;
 
   & > div {
@@ -143,10 +144,11 @@
 
 .connection-data {
   position: relative;
-  margin: 0 15px;
+  margin: 0 0 5px;
   border: 1px solid #d7d7dc;
   border-radius: 5px;
   background: #eee;
+  width: 100%;
 }
 
 .connection-type {
@@ -213,7 +215,7 @@
     background: #ccc;
     position: absolute;
     height: 1px;
-    width: 15px;
+    width: 50px;
     top: 13px;
     right: 0;
   }
@@ -240,20 +242,20 @@
     background: #ccc;
     position: absolute;
     height: 1px;
-    width: 16px;
+    width: 50px;
     top: 13px;
     right: 100%;
   }
-  .connection-data:after {
-    content: '';
-    display: block;
-    background: #ccc;
-    position: absolute;
-    height: 1px;
-    width: 16px;
-    top: 13px;
-    left: 100%;
-  }
+  // .connection-data:after {
+  //   content: '';
+  //   display: block;
+  //   background: #f7f7f7;
+  //   position: absolute;
+  //   height: 1px;
+  //   width: 16px;
+  //   top: 13px;
+  //   left: 100%;
+  // }
 }
 
 .connection {

@@ -3997,14 +3997,14 @@ mark, .mark {
   .group .source {
     flex: 1; }
   .group .target-connections {
-    flex: 2; }
+    flex: 1; }
 
 .source {
   position: relative;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  padding-right: 15px; }
+  padding-right: 50px; }
 
 .target-connections {
   display: flex;
@@ -4012,8 +4012,9 @@ mark, .mark {
 
 .connection {
   display: flex;
+  flex-direction: column;
   align-items: flex-start;
-  padding-bottom: 15px;
+  padding: 0 15px 15px 50px;
   position: relative; }
   .connection > div {
     flex: 1; }
@@ -4022,10 +4023,11 @@ mark, .mark {
 
 .connection-data {
   position: relative;
-  margin: 0 15px;
+  margin: 0 0 5px;
   border: 1px solid #d7d7dc;
   border-radius: 5px;
-  background: #eee; }
+  background: #eee;
+  width: 100%; }
 
 .connection-type {
   width: 100%;
@@ -4067,7 +4069,7 @@ mark, .mark {
   background: #ccc;
   position: absolute;
   height: 1px;
-  width: 15px;
+  width: 50px;
   top: 13px;
   right: 0; }
 
@@ -4090,19 +4092,9 @@ mark, .mark {
   background: #ccc;
   position: absolute;
   height: 1px;
-  width: 16px;
+  width: 50px;
   top: 13px;
   right: 100%; }
-
-.target-connections .connection-data:after {
-  content: '';
-  display: block;
-  background: #ccc;
-  position: absolute;
-  height: 1px;
-  width: 16px;
-  top: 13px;
-  left: 100%; }
 
 .connection:before {
   content: '';
