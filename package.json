@@ -7,8 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "server": "browser-sync start --config bs-config.js",
     "styles": "./node_modules/.bin/node-sass --watch src/styles/styles.scss app/styles/styles.css",
-    "scripts": "cat src/scripts/*.js | ./node_modules/.bin/uglifyjs -o app/scripts/app.js",
-    "templates": "./node_modules/.bin/pug src -w -P -o app"
+    "scripts": "watch './node_modules/.bin/uglifyjs src/scripts/*.js --output app/scripts/app.js' src/scripts/",
+    "templates": "./node_modules/.bin/pug src --watch --pretty --out app"
   },
   "author": "",
   "license": "ISC",
@@ -17,6 +17,7 @@
     "node-sass": "^4.5.3",
     "pug": "^2.0.0-rc.4",
     "pug-cli": "^1.0.0-alpha6",
-    "uglify-js": "^3.1.0"
+    "uglify-js": "^3.1.0",
+    "watch": "^1.0.2"
   }
 }

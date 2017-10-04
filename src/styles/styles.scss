@@ -99,18 +99,22 @@
   }
 
   > div {
-    display: flex;
     margin-bottom: 15px;
 
     &:last-child {
       margin-bottom: 0;
     }
   }
+  .group-row {
+    position: relative;
+  }
   .source {
-    flex: 1;
+    position: absolute;
+    width: 50%;
   }
   .target-connections {
-    flex: 1;
+    width: 50%;
+    margin-left: 50%;
   }
 }
 
@@ -172,10 +176,8 @@
   }
 }
 
-.item + .item-connection .connection-data {
-  border-top: 0;
-  border-top-right-radius: 0;
-  border-top-left-radius: 0;
+.item + .item-connection {
+  margin-top: 15px;
 }
 
 .connection-type:has(> .fa-exchange) {
@@ -208,7 +210,7 @@
 
 
 
-.source:not(.source-row) {
+.item-connection {
   &:after {
     content: '';
     display: block;
@@ -217,7 +219,7 @@
     height: 1px;
     width: 50px;
     top: 13px;
-    right: 0;
+    right: -50px;
   }
 
   &:before {
@@ -231,7 +233,7 @@
     width: 15px;
     border-radius: 50%;
     top: 6px;
-    right: -7px;
+    right: -57px;
   }
 }
 
@@ -366,3 +368,21 @@ $c-type-18:           #607D8B;
 .connection-type-16 { color: $c-type-16; }
 .connection-type-17 { color: $c-type-17; }
 .connection-type-18 { color: $c-type-18; }
+
+body {
+  overflow: auto;
+}
+
+#app {
+  overflow: auto;
+  height: auto;
+  padding-top: 0;
+}
+
+header {
+  position: relative;
+}
+
+.source {
+  padding-top: 15px;
+}

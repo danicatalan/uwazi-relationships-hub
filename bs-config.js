@@ -15,7 +15,7 @@
 module.exports = {
     "ui": false,
     "files": [
-        "app/index.html",
+        "app/*.html",
         "app/styles/styles.css",
         "app/scripts/app.js"
     ],

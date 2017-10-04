@@ -2,7 +2,7 @@ mixin group(data)
   div(class="group")
     each node in data.nodes
       - if(data.nodes.indexOf(node) == 0 && data.nodes.length > 1)
-        div
+        div(class="group-row")
           div(class="source source-row")
               div(class="item")
                 div(class="item-info")
@@ -17,7 +17,7 @@ mixin group(data)
                   div(class="item-type item-type-" + data.template.type)
                     span(class="item-type__name")= data.template.label
           div(class="target-connections")
-      div
+      div(class="group-row")
         div(class="source")
           - if(data.nodes.indexOf(node) == 0 && data.nodes.length == 1)
             div(class="item")

@@ -3990,14 +3990,17 @@ mark, .mark {
   .group:not(:last-child) {
     border-bottom: 2px dotted #ccc; }
   .group > div {
-    display: flex;
     margin-bottom: 15px; }
     .group > div:last-child {
       margin-bottom: 0; }
+  .group .group-row {
+    position: relative; }
   .group .source {
-    flex: 1; }
+    position: absolute;
+    width: 50%; }
   .group .target-connections {
-    flex: 1; }
+    width: 50%;
+    margin-left: 50%; }
 
 .source {
   position: relative;
@@ -4042,10 +4045,8 @@ mark, .mark {
   margin: 0;
   width: 100%; }
 
-.item + .item-connection .connection-data {
-  border-top: 0;
-  border-top-right-radius: 0;
-  border-top-left-radius: 0; }
+.item + .item-connection {
+  margin-top: 15px; }
 
 .connection-type:has( > .fa-exchange) {
   border-bottom-right-radius: 0;
@@ -4063,7 +4064,7 @@ mark, .mark {
   .item-compact .item-metadata {
     display: none; }
 
-.source:not(.source-row):after {
+.item-connection:after {
   content: '';
   display: block;
   background: #ccc;
@@ -4071,9 +4072,9 @@ mark, .mark {
   height: 1px;
   width: 50px;
   top: 13px;
-  right: 0; }
+  right: -50px; }
 
-.source:not(.source-row):before {
+.item-connection:before {
   content: '';
   display: block;
   border: 1px solid #ccc;
@@ -4084,7 +4085,7 @@ mark, .mark {
   width: 15px;
   border-radius: 50%;
   top: 6px;
-  right: -7px; }
+  right: -57px; }
 
 .target-connections .connection-data:before {
   content: '';
@@ -4208,3 +4209,17 @@ mark, .mark {
 
 .connection-type-18 {
   color: #607D8B; }
+
+body {
+  overflow: auto; }
+
+#app {
+  overflow: auto;
+  height: auto;
+  padding-top: 0; }
+
+header {
+  position: relative; }
+
+.source {
+  padding-top: 15px; }

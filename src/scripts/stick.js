@@ -1,0 +1,1 @@
+$(".source").stick_in_parent();
