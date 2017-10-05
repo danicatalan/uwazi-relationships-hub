@@ -4,12 +4,10 @@ $("#toggleMetadata").click(function(){
   metadataShow = !metadataShow;
 
   if (metadataShow) {
-    $('.target-connections .item-metadata').show();
-    $('.target-connections .item').removeClass('item-compact');
+    $('.group').removeClass('group-collapse');
     $("#toggleMetadata").html('<i class="fa fa-compress"></i><span>&nbsp;&nbsp;Collapse</span>');
   } else {
-    $('.target-connections .item-metadata').hide();
-    $('.target-connections .item').addClass('item-compact');
+    $('.group').addClass('group-collapse');
     $("#toggleMetadata").html('<i class="fa fa-expand"></i><span>&nbsp;&nbsp;Expand</span>');
   }
 });

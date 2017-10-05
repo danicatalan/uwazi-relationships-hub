@@ -185,7 +185,8 @@
   border-bottom-left-radius: 0;
 }
 
-.item-compact {
+.group-collapse {
+  .item {
     display: flex;
     flex-direction: row;
     min-height: 0;
@@ -200,6 +201,13 @@
     .item-metadata {
       display: none;
     }
+  }
+  .item-metadata {
+    display: none;
+  }
+  .connection-type {
+    padding: 5px;
+  }
 }
 
 
@@ -370,7 +378,8 @@ $c-type-18:           #607D8B;
 .connection-type-18 { color: $c-type-18; }
 
 body {
-  overflow: auto;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
 #app {
@@ -385,4 +394,14 @@ header {
 
 .source {
   padding-top: 15px;
+}
+
+.entity-viewer {
+  overflow: auto;
+  height: auto;
+}
+
+.entity-connections {
+  position: absolute;
+  border-bottom: 1px solid #ccc;
 }

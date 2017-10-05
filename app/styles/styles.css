@@ -4052,17 +4052,23 @@ mark, .mark {
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0; }
 
-.item-compact {
+.group-collapse .item {
   display: flex;
   flex-direction: row;
   min-height: 0; }
-  .item-compact .item-type {
+  .group-collapse .item .item-type {
     margin: 5px;
     flex: 0; }
-  .item-compact .item-info {
+  .group-collapse .item .item-info {
     padding: 5px; }
-  .item-compact .item-metadata {
+  .group-collapse .item .item-metadata {
     display: none; }
+
+.group-collapse .item-metadata {
+  display: none; }
+
+.group-collapse .connection-type {
+  padding: 5px; }
 
 .item-connection:after {
   content: '';
@@ -4211,7 +4217,8 @@ mark, .mark {
   color: #607D8B; }
 
 body {
-  overflow: auto; }
+  overflow-y: auto;
+  overflow-x: hidden; }
 
 #app {
   overflow: auto;
@@ -4223,3 +4230,11 @@ header {
 
 .source {
   padding-top: 15px; }
+
+.entity-viewer {
+  overflow: auto;
+  height: auto; }
+
+.entity-connections {
+  position: absolute;
+  border-bottom: 1px solid #ccc; }
