@@ -3994,7 +3994,8 @@ mark, .mark {
     .group > div:last-child {
       margin-bottom: 0; }
   .group .group-row {
-    position: relative; }
+    position: relative;
+    min-height: 100px; }
   .group .source {
     position: absolute;
     width: 50%; }
@@ -4007,7 +4008,8 @@ mark, .mark {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  padding-right: 50px; }
+  padding-right: 50px;
+  z-index: 1; }
 
 .target-connections {
   display: flex;
@@ -4070,6 +4072,17 @@ mark, .mark {
 .group-collapse .connection-type {
   padding: 5px; }
 
+.hub {
+  width: 16px;
+  height: 16px;
+  background: #eee;
+  border: 1px solid #ccc;
+  position: absolute;
+  top: 6px;
+  right: -58px;
+  border-radius: 50%;
+  z-index: 1; }
+
 .item-connection:after {
   content: '';
   display: block;
@@ -4080,19 +4093,6 @@ mark, .mark {
   top: 13px;
   right: -50px; }
 
-.item-connection:before {
-  content: '';
-  display: block;
-  border: 1px solid #ccc;
-  background: #ccc;
-  z-index: 1;
-  position: absolute;
-  height: 15px;
-  width: 15px;
-  border-radius: 50%;
-  top: 6px;
-  right: -57px; }
-
 .target-connections .connection-data:before {
   content: '';
   display: block;
@@ -4102,42 +4102,6 @@ mark, .mark {
   width: 50px;
   top: 13px;
   right: 100%; }
-
-.connection:before {
-  content: '';
-  background: #ccc;
-  position: absolute;
-  top: 0;
-  height: 14px;
-  width: 1px;
-  left: -1px; }
-
-.connection:after {
-  content: '';
-  background: #ccc;
-  position: absolute;
-  bottom: 0;
-  top: 14px;
-  width: 1px;
-  left: -1px; }
-
-.connection:first-child:before {
-  content: '';
-  background: #fcfcfc;
-  position: absolute;
-  top: 0;
-  height: 13px;
-  width: 1px;
-  left: -1px; }
-
-.connection:last-child:after {
-  content: '';
-  background: #fcfcfc;
-  position: absolute;
-  bottom: 0;
-  top: 14px;
-  width: 1px;
-  left: -1px; }
 
 .multiselect {
   padding-top: 15px; }
@@ -4228,12 +4192,10 @@ body {
 header {
   position: relative; }
 
-.source {
-  padding-top: 15px; }
-
 .entity-viewer {
-  overflow: auto;
-  height: auto; }
+  overflow: hidden;
+  height: auto;
+  padding-bottom: 60px; }
 
 .entity-connections {
   position: absolute;

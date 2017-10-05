@@ -107,6 +107,7 @@
   }
   .group-row {
     position: relative;
+    min-height: 100px;
   }
   .source {
     position: absolute;
@@ -124,6 +125,7 @@
   flex-direction: column;
   justify-content: flex-start;
   padding-right: 50px;
+  z-index: 1;
 }
 
 .target-connections {
@@ -210,13 +212,18 @@
   }
 }
 
-
-
-
-
-
-
-
+.hub {
+  $hub-size: 16px;
+  width: $hub-size;
+  height: $hub-size;
+  background: #eee;
+  border: 1px solid #ccc;
+  position: absolute;
+  top: (28px - $hub-size)/2;
+  right: -50px - $hub-size/2;
+  border-radius: 50%;
+  z-index: 1;
+}
 
 .item-connection {
   &:after {
@@ -228,20 +235,6 @@
     width: 50px;
     top: 13px;
     right: -50px;
-  }
-
-  &:before {
-    content: '';
-    display: block;
-    border: 1px solid #ccc;
-    background: #ccc;
-    z-index: 1;
-    position: absolute;
-    height: 15px;
-    width: 15px;
-    border-radius: 50%;
-    top: 6px;
-    right: -57px;
   }
 }
 
@@ -256,56 +249,47 @@
     top: 13px;
     right: 100%;
   }
-  // .connection-data:after {
-  //   content: '';
-  //   display: block;
-  //   background: #f7f7f7;
-  //   position: absolute;
-  //   height: 1px;
-  //   width: 16px;
-  //   top: 13px;
-  //   left: 100%;
-  // }
 }
 
-.connection {
-  &:before {
-    content: '';
-    background: #ccc;
-    position: absolute;
-    top: 0;
-    height: 14px;
-    width: 1px;
-    left: -1px;
-  }
-  &:after {
-    content: '';
-    background: #ccc;
-    position: absolute;
-    bottom: 0;
-    top: 14px;
-    width: 1px;
-    left: -1px;
-  }
-  &:first-child:before {
-    content: '';
-    background: #fcfcfc;
-    position: absolute;
-    top: 0;
-    height: 13px;
-    width: 1px;
-    left: -1px;
-  }
-  &:last-child:after {
-    content: '';
-    background: #fcfcfc;
-    position: absolute;
-    bottom: 0;
-    top: 14px;
-    width: 1px;
-    left: -1px;
-  }
-}
+// 
+// .connection {
+//   &:before {
+//     content: '';
+//     background: #ccc;
+//     position: absolute;
+//     top: 0;
+//     height: 14px;
+//     width: 1px;
+//     left: -1px;
+//   }
+//   &:after {
+//     content: '';
+//     background: #ccc;
+//     position: absolute;
+//     bottom: 0;
+//     top: 14px;
+//     width: 1px;
+//     left: -1px;
+//   }
+//   &:first-child:before {
+//     content: '';
+//     background: #fcfcfc;
+//     position: absolute;
+//     top: 0;
+//     height: 13px;
+//     width: 1px;
+//     left: -1px;
+//   }
+//   &:last-child:after {
+//     content: '';
+//     background: #fcfcfc;
+//     position: absolute;
+//     bottom: 0;
+//     top: 14px;
+//     width: 1px;
+//     left: -1px;
+//   }
+// }
 
 
 
@@ -392,13 +376,10 @@ header {
   position: relative;
 }
 
-.source {
-  padding-top: 15px;
-}
-
 .entity-viewer {
-  overflow: auto;
+  overflow: hidden;
   height: auto;
+  padding-bottom: 60px;
 }
 
 .entity-connections {

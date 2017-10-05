@@ -13,7 +13,7 @@ block content
       div
         div(class="dropdown dropdown-groups")
             a(class="btn btn-default" href="#") Grouped by
-              b Lost person
+              b Event
               i(class="fa fa-caret-down")
             ul(class="dropdown-list", style="display: none")
               li
@@ -30,7 +30,11 @@ block content
             span &nbsp;&nbsp;Expand
 
     div(class="container")
-      div(id="groupByEvent" class="group-wrapper" style="display: none;")
+      div(id="groupByShowcase" class="group-wrapper")
+        include data/zorlakay/firstTest.pug
+        each group in firstTest
+          +group(group)
+      div(id="groupByEvent" class="group-wrapper")
         include data/zorlakay/groupByEvent.pug
         each group in groupByEvent
           +group(group)
@@ -38,13 +42,9 @@ block content
         include data/zorlakay/groupByVictim.pug
         each group in groupByVictim
           +group(group)
-      div(id="groupBySuspect" class="group-wrapper" style="display: none;")
+      div(id="groupBySuspect" class="group-wrapper")
         include data/zorlakay/groupBySuspect.pug
         each group in groupBySuspect
-          +group(group)
-      div(id="groupByShowcase" class="group-wrapper" style="display: none;")
-        include data/zorlakay/firstTest.pug
-        each group in firstTest
           +group(group)
 
   aside(class="side-panel entity-connections entity-connections is-hidden")
