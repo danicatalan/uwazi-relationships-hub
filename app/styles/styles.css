@@ -3940,7 +3940,7 @@ mark, .mark {
 
 .dropdown-list {
   position: absolute;
-  z-index: 1;
+  z-index: 100;
   background: white;
   padding: 15px;
   border-radius: 3px;
@@ -4001,7 +4001,8 @@ mark, .mark {
     width: 50%; }
   .group .target-connections {
     width: 50%;
-    margin-left: 50%; }
+    margin-left: 50%;
+    border-left: 1px solid #ccc; }
 
 .source {
   position: relative;
@@ -4067,6 +4068,9 @@ mark, .mark {
     display: none; }
 
 .group-collapse .item-metadata {
+  display: none; }
+
+.group-collapse .connection-data.as-previous {
   display: none; }
 
 .group-collapse .connection-type {

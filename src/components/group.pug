@@ -19,7 +19,7 @@ mixin group(data)
           div(class="target-connections")
       div(class="group-row")
         div(class="source")
-          - if(data.nodes.indexOf(node) == 0 && data.nodes.length == 1)            
+          - if(data.nodes.indexOf(node) == 0 && data.nodes.length == 1)
             div(class="item")
               div(class="item-info")
                 p(class="item-name")= data.name
@@ -44,10 +44,11 @@ mixin group(data)
                       dt= metadata.label
                       dd= metadata.value
         div(class="target-connections")
+          - var previousConnection = '';
           each connection in node.connections
             div(class="connection")
               -if(Object.keys(connection.relationship).length > 0)
-                div(class="connection-data")
+                div(class="connection-data " + (previousConnection == connection.relationship.label ? 'as-previous' : ''))
                   p(class="connection-type connection-type-" + connection.relationship.type)
                     span= connection.relationship.label
                   - if(connection.relationship.metadata && connection.relationship.metadata.length > 0)
@@ -56,6 +57,7 @@ mixin group(data)
                         dl
                           dt= metadata.label
                           dd= metadata.value
+                - previousConnection = connection.relationship.label
               div(class="item")
                 div(class="item-info")
                   p(class="item-name")= connection.name
