@@ -6,8 +6,12 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "server": "browser-sync start --config bs-config.js",
-    "styles": "./node_modules/.bin/node-sass --watch src/styles/styles.scss app/styles/styles.css",
-    "scripts": "watch './node_modules/.bin/uglifyjs src/scripts/*.js --output app/scripts/app.js' src/scripts/",
+    "styles": "npm run styles:vendor && npm run styles:app",
+    "styles:vendor": "cp src/vendor/css/*.css app/vendor/css/",
+    "styles:app": "./node_modules/.bin/node-sass --watch src/styles/styles.scss app/styles/styles.css",
+    "scripts": "npm run scripts:vendor && npm run scripts:app",
+    "scripts:vendor": "cp src/vendor/js/*.js app/vendor/js/",
+    "scripts:app": "watch './node_modules/.bin/uglifyjs src/scripts/*.js --output app/scripts/app.js' src/scripts/",
     "templates": "./node_modules/.bin/pug src --watch --pretty --out app"
   },
   "author": "",
