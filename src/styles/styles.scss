@@ -116,7 +116,6 @@
   .target-connections {
     width: 50%;
     margin-left: 50%;
-    border-left: 1px solid #ccc;
   }
 }
 
@@ -188,6 +187,11 @@
   border-bottom-left-radius: 0;
 }
 
+.source > div:first-child,
+.target-connections > div:first-child {
+  margin-top: 30px;
+}
+
 .group-collapse {
   .item {
     display: flex;
@@ -239,7 +243,7 @@
   }
 }
 
-.target-connections {
+.target-connections {  
   .connection-data:before {
     content: '';
     display: block;
@@ -252,73 +256,42 @@
   }
 }
 
-// 
-// .connection {
-//   &:before {
-//     content: '';
-//     background: #ccc;
-//     position: absolute;
-//     top: 0;
-//     height: 14px;
-//     width: 1px;
-//     left: -1px;
-//   }
-//   &:after {
-//     content: '';
-//     background: #ccc;
-//     position: absolute;
-//     bottom: 0;
-//     top: 14px;
-//     width: 1px;
-//     left: -1px;
-//   }
-//   &:first-child:before {
-//     content: '';
-//     background: #fcfcfc;
-//     position: absolute;
-//     top: 0;
-//     height: 13px;
-//     width: 1px;
-//     left: -1px;
-//   }
-//   &:last-child:after {
-//     content: '';
-//     background: #fcfcfc;
-//     position: absolute;
-//     bottom: 0;
-//     top: 14px;
-//     width: 1px;
-//     left: -1px;
-//   }
-// }
-
-
-
-
-
-.multiselect {
-  padding-top: 15px;
-}
-
-.multiselect-item {
-  padding: 5px;
-  margin: 0 -5px;
-}
-.multiselect-item a {
-  color: #444;
-  padding: 0px 15px;
-  font-weight: bold;
-  display: inline-block;
-  line-height: 1.2em;
-  font-size: 13px;
-
-  .fa {
-    margin-right: 10px;
-    color: #ccc;
+.source {
+  &:after {
+    content: '';
+    display: block;
+    width: 1px;
+    bottom: 7px;
+    top: 0;
+    background: blue;
+    position: absolute;
+    right: -1px;
   }
+}
 
-  .fa-check {
-    color: #5CB85C;
+.target-connections {
+  border-left: 1px solid red;
+  z-index: 2;
+  &:before {
+    content: '';
+    display: block;
+    width: 14px;
+    height: 44px;
+    background: #fcfcfc;
+    position: absolute;
+    z-index: 2;
+    margin-left: -2px;
+  }
+  .connection:last-child:after {
+    content: '';
+    display: block;
+    width: 14px;
+    background: #fcfcfc;
+    position: absolute;
+    bottom: 0;
+    top: 15px;
+    left: 0px;
+    margin-left: -2px;
   }
 }
 
@@ -386,4 +359,30 @@ header {
 .entity-connections {
   position: absolute;
   border-bottom: 1px solid #ccc;
+}
+
+.multiselect {
+  padding-top: 15px;
+}
+
+.multiselect-item {
+  padding: 5px;
+  margin: 0 -5px;
+}
+.multiselect-item a {
+  color: #444;
+  padding: 0px 15px;
+  font-weight: bold;
+  display: inline-block;
+  line-height: 1.2em;
+  font-size: 13px;
+
+  .fa {
+    margin-right: 10px;
+    color: #ccc;
+  }
+
+  .fa-check {
+    color: #5CB85C;
+  }
 }

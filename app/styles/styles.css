@@ -4001,8 +4001,7 @@ mark, .mark {
     width: 50%; }
   .group .target-connections {
     width: 50%;
-    margin-left: 50%;
-    border-left: 1px solid #ccc; }
+    margin-left: 50%; }
 
 .source {
   position: relative;
@@ -4055,6 +4054,10 @@ mark, .mark {
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0; }
 
+.source > div:first-child,
+.target-connections > div:first-child {
+  margin-top: 30px; }
+
 .group-collapse .item {
   display: flex;
   flex-direction: row;
@@ -4104,25 +4107,38 @@ mark, .mark {
   top: 13px;
   right: 100%; }
 
-.multiselect {
-  padding-top: 15px; }
+.source:after {
+  content: '';
+  display: block;
+  width: 1px;
+  bottom: 7px;
+  top: 0;
+  background: blue;
+  position: absolute;
+  right: -1px; }
 
-.multiselect-item {
-  padding: 5px;
-  margin: 0 -5px; }
-
-.multiselect-item a {
-  color: #444;
-  padding: 0px 15px;
-  font-weight: bold;
-  display: inline-block;
-  line-height: 1.2em;
-  font-size: 13px; }
-  .multiselect-item a .fa {
-    margin-right: 10px;
-    color: #ccc; }
-  .multiselect-item a .fa-check {
-    color: #5CB85C; }
+.target-connections {
+  border-left: 1px solid red;
+  z-index: 2; }
+  .target-connections:before {
+    content: '';
+    display: block;
+    width: 14px;
+    height: 44px;
+    background: #fcfcfc;
+    position: absolute;
+    z-index: 2;
+    margin-left: -2px; }
+  .target-connections .connection:last-child:after {
+    content: '';
+    display: block;
+    width: 14px;
+    background: #fcfcfc;
+    position: absolute;
+    bottom: 0;
+    top: 15px;
+    left: 0px;
+    margin-left: -2px; }
 
 .connection-type-0 {
   color: #C03B22; }
@@ -4201,3 +4217,23 @@ header {
 .entity-connections {
   position: absolute;
   border-bottom: 1px solid #ccc; }
+
+.multiselect {
+  padding-top: 15px; }
+
+.multiselect-item {
+  padding: 5px;
+  margin: 0 -5px; }
+
+.multiselect-item a {
+  color: #444;
+  padding: 0px 15px;
+  font-weight: bold;
+  display: inline-block;
+  line-height: 1.2em;
+  font-size: 13px; }
+  .multiselect-item a .fa {
+    margin-right: 10px;
+    color: #ccc; }
+  .multiselect-item a .fa-check {
+    color: #5CB85C; }
