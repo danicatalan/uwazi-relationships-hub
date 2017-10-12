@@ -1,5 +1,7 @@
 @import "vendor/uwazi/styles";
 
+$breakpoint: 768px;
+
 .entity-viewer {
   background-color: #fcfcfc;
 }
@@ -109,18 +111,25 @@
 }
 .group-row {
   position: relative;
-  display: flex;
-  align-items: flex-start;
   overflow: hidden;
+  @media(min-width: $breakpoint) {
+    display: flex;
+    align-items: flex-start;
+  }
 }
 .source {
-  position: absolute;
-  width: 50%;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  padding-right: 50px;
-  z-index: 1;
+  @media(max-width: $breakpoint - 1px) {
+    position: relative !important;
+  }
+  @media(min-width: $breakpoint) {
+    position: absolute;
+    width: 50%;
+    padding-right: 50px;
+    z-index: 1;
+  }
 }
 .source-row,
 .source-connections-1 {
@@ -128,10 +137,13 @@
 }
 
 .target-connections {
-  width: 50%;
-  margin-left: 50%;
   display: flex;
   flex-direction: column;
+  margin-left: 15px;
+  @media(min-width: $breakpoint) {
+    width: 50%;
+    margin-left: 50%;
+  }
 }
 
 .source-connections-1 + .target-connections,
@@ -147,11 +159,15 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding: 0 15px 15px 50px;
+  padding: 0 15px 15px;
   position: relative;
 
   &:last-child {
     padding-bottom: 0;
+  }
+
+  @media(min-width: $breakpoint) {
+    padding-left: 50px;
   }
 }
 
@@ -194,9 +210,15 @@
   border-bottom-left-radius: 0;
 }
 
-.source > div:first-child,
 .target-connections > div:first-child {
-  margin-top: 30px;
+  margin-top: 15px;
+}
+
+@media(min-width: $breakpoint) {
+  .source > div:first-child,
+  .target-connections > div:first-child {
+    margin-top: 30px;
+  }
 }
 
 .group-collapse {
@@ -263,9 +285,12 @@ $hub-size: 16px;
     background: #ccc;
     position: absolute;
     height: 1px;
-    width: 51px;
+    width: 16px;
     top: 13px;
     right: 100%;
+    @media(min-width: $breakpoint) {
+      width: 51px;
+    }
   }
 }
 
@@ -286,15 +311,17 @@ $hub-size: 16px;
 .target-connections {
   border-left: 1px solid red;
   border-left: 1px solid #ccc;
-  &:before {
-    content: '';
-    display: block;
-    width: 14px;
-    height: 44px;
-    background: #fcfcfc;
-    position: absolute;
-    z-index: 2;
-    margin-left: -2px;
+  @media(min-width: $breakpoint) {
+    &:before {
+      content: '';
+      display: block;
+      width: 14px;
+      height: 44px;
+      background: #fcfcfc;
+      position: absolute;
+      z-index: 2;
+      margin-left: -2px;
+    }
   }
   .connection:last-child:after {
     content: '';
