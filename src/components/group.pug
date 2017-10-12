@@ -19,7 +19,7 @@ mixin group(data)
           div(class="target-connections")
       div(class="group-row")
         div(class="source source-connections-" + node.connections.length)
-          - if(data.nodes.indexOf(node) == 0 && data.nodes.length == 1)            
+          if(data.nodes.indexOf(node) == 0 && data.nodes.length == 1)
             div(class="item")
               div(class="item-info")
                 p(class="item-name")= data.name
