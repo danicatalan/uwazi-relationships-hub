@@ -66,7 +66,7 @@ mixin group(data)
                 - var asPrevious = previousConnection == connection.relationship.label ? 'as-previous' : '';
                 div(class="connection-data " + asPrevious)
                   p(class="connection-type connection-type-" + connection.relationship.type)
-                    span= connection.relationship.label + ":" + currentType + ":" + connectionTypes + ":" + isLastOfType
+                    span= connection.relationship.label
                   if(connection.relationship.metadata && connection.relationship.metadata.length > 0)
                     div(class="item-metadata")
                       each metadata in connection.relationship.metadata
@@ -74,7 +74,7 @@ mixin group(data)
                           dt= metadata.label
                           dd= metadata.value
                 - previousConnection = connection.relationship.label
-              div(class="item")
+              div(class="item " + (!Object.keys(connection.relationship).length ? 'no-connection' : ''))
                 div(class="item-info")
                   p(class="item-name")= connection.name
                 if(connection.metadata && connection.metadata.length > 0)

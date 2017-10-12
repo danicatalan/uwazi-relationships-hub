@@ -278,8 +278,8 @@ $hub-size: 16px;
   }
 }
 
-.target-connections {  
-  .connection-data:before {
+.target-connections {
+  .connection-data:before, .item.no-connection:before {
     content: '';
     display: block;
     background: #ccc;
@@ -334,6 +334,18 @@ $hub-size: 16px;
     left: 0px;
     margin-left: -2px;
   }
+}
+
+.group.group-collapse .target-connections .connection.last-of-type:after {
+  content: '';
+  display: block;
+  width: 14px;
+  background: #fcfcfc;
+  position: absolute;
+  bottom: -15px;
+  top: 15px;
+  left: 0px;
+  margin-left: -2px;
 }
 
 .target-connections-multiple:before {
