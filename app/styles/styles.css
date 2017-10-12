@@ -3926,7 +3926,8 @@ mark, .mark {
   align-items: center; }
 
 .container {
-  margin-top: 15px; }
+  margin-top: 15px;
+  width: 100%; }
 
 .dropdown {
   margin-bottom: 15px;
@@ -3940,7 +3941,7 @@ mark, .mark {
 
 .dropdown-list {
   position: absolute;
-  z-index: 1;
+  z-index: 2;
   background: white;
   padding: 15px;
   border-radius: 3px;
@@ -3994,11 +3995,12 @@ mark, .mark {
     .group > div:last-child {
       margin-bottom: 0; }
   .group .group-row {
-    position: relative;
-    min-height: 100px; }
+    position: relative; }
   .group .source {
     position: absolute;
     width: 50%; }
+  .group .source-row {
+    position: relative; }
   .group .target-connections {
     width: 50%;
     margin-left: 50%; }
@@ -4008,8 +4010,7 @@ mark, .mark {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  padding-right: 50px;
-  z-index: 1; }
+  padding-right: 50px; }
 
 .target-connections {
   display: flex;
@@ -4021,8 +4022,6 @@ mark, .mark {
   align-items: flex-start;
   padding: 0 15px 15px 50px;
   position: relative; }
-  .connection > div {
-    flex: 1; }
   .connection:last-child {
     padding-bottom: 0; }
 
@@ -4084,8 +4083,7 @@ mark, .mark {
   position: absolute;
   top: 6px;
   right: -58px;
-  border-radius: 50%;
-  z-index: 1; }
+  border-radius: 50%; }
 
 .item-connection:after {
   content: '';
@@ -4107,15 +4105,17 @@ mark, .mark {
   top: 13px;
   right: 100%; }
 
-.source:after {
-  content: '';
-  display: block;
-  width: 1px;
-  bottom: 7px;
-  top: 0;
-  background: blue;
-  position: absolute;
-  right: -1px; }
+.source:not(.source-row) {
+  z-index: 1; }
+  .source:not(.source-row):after {
+    content: '';
+    display: block;
+    width: 1px;
+    bottom: 7px;
+    top: 0;
+    background: blue;
+    position: absolute;
+    right: -1px; }
 
 .target-connections {
   border-left: 1px solid red;

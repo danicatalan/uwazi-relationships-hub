@@ -18,7 +18,7 @@ mixin group(data)
                     span(class="item-type__name")= data.template.label
           div(class="target-connections")
       div(class="group-row")
-        div(class="source")
+        div(class="source source-connections-" + node.connections.length)
           - if(data.nodes.indexOf(node) == 0 && data.nodes.length == 1)            
             div(class="item")
               div(class="item-info")

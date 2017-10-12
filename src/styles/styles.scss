@@ -15,6 +15,7 @@
 
 .container {
   margin-top: 15px;
+  width: 100%;
 }
 
 
@@ -36,7 +37,7 @@
 
 .dropdown-list {
   position: absolute;
-  z-index: 1;
+  z-index: 2;
   background: white;
   padding: 15px;
   border-radius: 3px;
@@ -107,11 +108,13 @@
   }
   .group-row {
     position: relative;
-    min-height: 100px;
   }
   .source {
     position: absolute;
     width: 50%;
+  }
+  .source-row {
+    position: relative;
   }
   .target-connections {
     width: 50%;
@@ -125,7 +128,6 @@
   flex-direction: column;
   justify-content: flex-start;
   padding-right: 50px;
-  z-index: 1;
 }
 
 .target-connections {
@@ -140,9 +142,6 @@
   padding: 0 15px 15px 50px;
   position: relative;
 
-  & > div {
-    flex: 1;
-  }
   &:last-child {
     padding-bottom: 0;
   }
@@ -227,7 +226,6 @@
   top: (28px - $hub-size)/2;
   right: -50px - $hub-size/2;
   border-radius: 50%;
-  z-index: 1;
 }
 
 .item-connection {
@@ -256,7 +254,8 @@
   }
 }
 
-.source {
+.source:not(.source-row) {
+  z-index: 1;
   &:after {
     content: '';
     display: block;
@@ -264,6 +263,7 @@
     bottom: 7px;
     top: 0;
     background: blue;
+    // background: #ccc;
     position: absolute;
     right: -1px;
   }
@@ -271,6 +271,7 @@
 
 .target-connections {
   border-left: 1px solid red;
+  // border-left: 1px solid #ccc;
   z-index: 2;
   &:before {
     content: '';

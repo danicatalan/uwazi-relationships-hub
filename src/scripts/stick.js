@@ -1,1 +1,1 @@
-$(".source").stick_in_parent();
+$(".source:not(.source-row):not(.source-connections-1)").stick_in_parent();
