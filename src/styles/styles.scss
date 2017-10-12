@@ -110,6 +110,8 @@
 .group-row {
   position: relative;
   display: flex;
+  align-items: flex-start;
+  overflow: hidden;
 }
 .source {
   position: absolute;
@@ -118,6 +120,7 @@
   flex-direction: column;
   justify-content: flex-start;
   padding-right: 50px;
+  z-index: 1;
 }
 .source-row,
 .source-connections-1 {
@@ -227,8 +230,8 @@
   }
 }
 
+$hub-size: 16px;
 .hub {
-  $hub-size: 16px;
   width: $hub-size;
   height: $hub-size;
   background: #eee;
@@ -237,6 +240,7 @@
   top: (28px - $hub-size)/2;
   right: -50px - $hub-size/2;
   border-radius: 50%;
+  z-index: 1;
 }
 
 .item-connection {
@@ -259,30 +263,29 @@
     background: #ccc;
     position: absolute;
     height: 1px;
-    width: 50px;
+    width: 51px;
     top: 13px;
     right: 100%;
   }
 }
 
 .source:not(.source-row) {
-  z-index: 1;
-  &:after {
+  & .hub:after {
     content: '';
     display: block;
     width: 1px;
-    bottom: 7px;
-    top: 0;
+    top: -100vh;
+    bottom: $hub-size;
     background: blue;
-    // background: #ccc;
+    background: #ccc;
     position: absolute;
-    right: -1px;
+    left: 50%;
   }
 }
 
 .target-connections {
   border-left: 1px solid red;
-  // border-left: 1px solid #ccc;
+  border-left: 1px solid #ccc;
   &:before {
     content: '';
     display: block;

@@ -3997,7 +3997,9 @@ mark, .mark {
 
 .group-row {
   position: relative;
-  display: flex; }
+  display: flex;
+  align-items: flex-start;
+  overflow: hidden; }
 
 .source {
   position: absolute;
@@ -4005,7 +4007,8 @@ mark, .mark {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  padding-right: 50px; }
+  padding-right: 50px;
+  z-index: 1; }
 
 .source-row,
 .source-connections-1 {
@@ -4094,7 +4097,8 @@ mark, .mark {
   position: absolute;
   top: 6px;
   right: -58px;
-  border-radius: 50%; }
+  border-radius: 50%;
+  z-index: 1; }
 
 .item-connection:after {
   content: '';
@@ -4112,24 +4116,24 @@ mark, .mark {
   background: #ccc;
   position: absolute;
   height: 1px;
-  width: 50px;
+  width: 51px;
   top: 13px;
   right: 100%; }
 
-.source:not(.source-row) {
-  z-index: 1; }
-  .source:not(.source-row):after {
-    content: '';
-    display: block;
-    width: 1px;
-    bottom: 7px;
-    top: 0;
-    background: blue;
-    position: absolute;
-    right: -1px; }
+.source:not(.source-row) .hub:after {
+  content: '';
+  display: block;
+  width: 1px;
+  top: -100vh;
+  bottom: 16px;
+  background: blue;
+  background: #ccc;
+  position: absolute;
+  left: 50%; }
 
 .target-connections {
-  border-left: 1px solid red; }
+  border-left: 1px solid red;
+  border-left: 1px solid #ccc; }
   .target-connections:before {
     content: '';
     display: block;
