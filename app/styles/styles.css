@@ -3994,27 +3994,35 @@ mark, .mark {
     margin-bottom: 15px; }
     .group > div:last-child {
       margin-bottom: 0; }
-  .group .group-row {
-    position: relative; }
-  .group .source {
-    position: absolute;
-    width: 50%; }
-  .group .source-row {
-    position: relative; }
-  .group .target-connections {
-    width: 50%;
-    margin-left: 50%; }
+
+.group-row {
+  position: relative;
+  display: flex; }
 
 .source {
-  position: relative;
+  position: absolute;
+  width: 50%;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   padding-right: 50px; }
 
+.source-row,
+.source-connections-1 {
+  position: relative; }
+
 .target-connections {
+  width: 50%;
+  margin-left: 50%;
   display: flex;
   flex-direction: column; }
+
+.source-connections-1 + .target-connections,
+.source-row + .target-connections {
+  margin-left: 0; }
+
+.source-row + .target-connections {
+  opacity: 0; }
 
 .connection {
   display: flex;
@@ -4121,8 +4129,7 @@ mark, .mark {
     right: -1px; }
 
 .target-connections {
-  border-left: 1px solid red;
-  z-index: 2; }
+  border-left: 1px solid red; }
   .target-connections:before {
     content: '';
     display: block;
