@@ -3941,7 +3941,7 @@ mark, .mark {
 
 .dropdown-list {
   position: absolute;
-  z-index: 2;
+  z-index: 100;
   background: white;
   padding: 15px;
   border-radius: 3px;
@@ -4070,6 +4070,9 @@ mark, .mark {
     display: none; }
 
 .group-collapse .item-metadata {
+  display: none; }
+
+.group-collapse .connection-data.as-previous {
   display: none; }
 
 .group-collapse .connection-type {

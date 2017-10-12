@@ -1,35 +1,40 @@
 mixin group(data)
   div(class="group group-collapse")
     each node in data.nodes
-      - if(data.nodes.indexOf(node) == 0 && data.nodes.length > 1)
+      if(data.nodes.indexOf(node) == 0 && data.nodes.length > 1)
         div(class="group-row")
           div(class="source source-row")
               div(class="item")
                 div(class="item-info")
                   p(class="item-name")= data.name
-                - if(data.metadata.length > 0)
+                if(data.metadata.length > 0)
                   div(class="item-metadata")
                     each metadata in data.metadata
                       dl
                         dt= metadata.label
                         dd= metadata.value
-                - if(data.template)
+                if(data.template)
                   div(class="item-type item-type-" + data.template.type)
                     span(class="item-type__name")= data.template.label
           div(class="target-connections")
       div(class="group-row")
+<<<<<<< HEAD
         div(class="source source-connections-" + node.connections.length)
           - if(data.nodes.indexOf(node) == 0 && data.nodes.length == 1)            
+=======
+        div(class="source")
+          if(data.nodes.indexOf(node) == 0 && data.nodes.length == 1)
+>>>>>>> c0c157a59de3b13fb5303cc37e0ed475667bf944
             div(class="item")
               div(class="item-info")
                 p(class="item-name")= data.name
-              - if(data.metadata && data.metadata.length > 0)
+              if(data.metadata && data.metadata.length > 0)
                 div(class="item-metadata")
                   each metadata in data.metadata
                     dl
                       dt= metadata.label
                       dd= metadata.value
-              - if(data.template)
+              if(data.template)
                 div(class="item-type item-type-" + data.template.type)
                   span(class="item-type__name")= data.template.label
           div(class="item-connection")
@@ -37,34 +42,36 @@ mixin group(data)
             div(class="connection-data")
               p(class="connection-type connection-type-" + node.relationship.type)
                 span= node.relationship.label
-              - if(node.relationship.metadata && node.relationship.metadata.length > 0)
+              if(node.relationship.metadata && node.relationship.metadata.length > 0)
                 div(class="item-metadata")
                   each metadata in node.relationship.metadata
                     dl
                       dt= metadata.label
                       dd= metadata.value
         div(class="target-connections")
+          - var previousConnection = '';
           each connection in node.connections
             div(class="connection")
-              -if(Object.keys(connection.relationship).length > 0)
-                div(class="connection-data")
+              if(Object.keys(connection.relationship).length > 0)
+                div(class="connection-data " + (previousConnection == connection.relationship.label ? 'as-previous' : ''))
                   p(class="connection-type connection-type-" + connection.relationship.type)
                     span= connection.relationship.label
-                  - if(connection.relationship.metadata && connection.relationship.metadata.length > 0)
+                  if(connection.relationship.metadata && connection.relationship.metadata.length > 0)
                     div(class="item-metadata")
                       each metadata in connection.relationship.metadata
                         dl
                           dt= metadata.label
                           dd= metadata.value
+                - previousConnection = connection.relationship.label
               div(class="item")
                 div(class="item-info")
                   p(class="item-name")= connection.name
-                - if(connection.metadata && connection.metadata.length > 0)
+                if(connection.metadata && connection.metadata.length > 0)
                   div(class="item-metadata")
                     each metadata in connection.metadata
                       dl
                         dt= metadata.label
                         dd= metadata.value
-                - if(connection.template)
+                if(connection.template)
                   div(class="item-type item-type-" + connection.template.type)
                     span(class="item-type__name")= connection.template.label

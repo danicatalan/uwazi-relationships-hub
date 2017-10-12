@@ -37,7 +37,7 @@
 
 .dropdown-list {
   position: absolute;
-  z-index: 2;
+  z-index: 100;
   background: white;
   padding: 15px;
   border-radius: 3px;
@@ -208,9 +208,15 @@
       display: none;
     }
   }
+
   .item-metadata {
     display: none;
   }
+
+  .connection-data.as-previous {
+    display: none;
+  }
+
   .connection-type {
     padding: 5px;
   }
