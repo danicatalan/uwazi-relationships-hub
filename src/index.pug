@@ -30,7 +30,7 @@ block content
             span &nbsp;&nbsp;Expand
 
     div(class="container")
-      div(id="groupByShowcase" class="group-wrapper")
+      div(id="groupByShowcase" class="group-wrapper" style="display: none")
         include data/zorlakay/firstTest.pug
         each group in firstTest
           +group(group)
@@ -38,11 +38,11 @@ block content
         include data/zorlakay/groupByEvent.pug
         each group in groupByEvent
           +group(group)
-      div(id="groupByLostperson" class="group-wrapper")
+      div(id="groupByLostperson" class="group-wrapper" style="display: none")
         include data/zorlakay/groupByVictim.pug
         each group in groupByVictim
           +group(group)
-      div(id="groupBySuspect" class="group-wrapper")
+      div(id="groupBySuspect" class="group-wrapper" style="display: none")
         include data/zorlakay/groupBySuspect.pug
         each group in groupBySuspect
           +group(group)
