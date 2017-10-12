@@ -4154,6 +4154,9 @@ mark, .mark {
     left: 0px;
     margin-left: -2px; }
 
+.target-connections-multiple:before {
+  height: 36px; }
+
 .connection-type-0 {
   color: #C03B22; }
 

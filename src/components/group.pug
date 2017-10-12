@@ -43,7 +43,10 @@ mixin group(data)
                     dl
                       dt= metadata.label
                       dd= metadata.value
-        div(class="target-connections")
+        - var targetConnectionsClass = "target-connections"
+        if(data.nodes.length > 1)
+          - targetConnectionsClass += " target-connections-multiple"
+        div(class=targetConnectionsClass)
           - var previousConnection = '';
           each connection in node.connections
             div(class="connection")

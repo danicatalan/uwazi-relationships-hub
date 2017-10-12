@@ -309,6 +309,10 @@ $hub-size: 16px;
   }
 }
 
+.target-connections-multiple:before {
+  height: 44px - $hub-size/2;
+}
+
 $c-type-0:            #C03B22;
 $c-type-1:            #D9534F;
 $c-type-2:            #E91E63;
