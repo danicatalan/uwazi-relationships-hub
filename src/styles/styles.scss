@@ -275,7 +275,7 @@ $hub-size: 16px;
     display: block;
     width: 1px;
     top: -100vh;
-    bottom: $hub-size;
+    bottom: $hub-size - 1px;
     background: blue;
     background: #ccc;
     position: absolute;
