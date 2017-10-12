@@ -4275,3 +4275,7 @@ header {
     color: #ccc; }
   .multiselect-item a .fa-check {
     color: #5CB85C; }
+
+@media (max-width: 767px) {
+  .side-panel {
+    display: none; } }

@@ -431,3 +431,9 @@ header {
     color: #5CB85C;
   }
 }
+
+@media(max-width: $breakpoint - 1px) {
+  .side-panel {
+    display: none;
+  }
+}
