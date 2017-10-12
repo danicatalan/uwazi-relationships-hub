@@ -47,13 +47,26 @@ mixin group(data)
         if(data.nodes.length > 1)
           - targetConnectionsClass += " target-connections-multiple"
         div(class=targetConnectionsClass)
+          - var connectionTypes = 0;
           - var previousConnection = '';
           each connection in node.connections
-            div(class="connection")
+            if (previousConnection != connection.relationship.label)
+              - connectionTypes += 1;
+            - previousConnection = connection.relationship.label
+
+          - previousConnection = '';
+          - var currentType = 0;
+          each connection in node.connections
+            if(Object.keys(connection.relationship).length > 0)
+              if (previousConnection != connection.relationship.label)
+                - currentType += 1;
+              - var isLastOfType = currentType == connectionTypes ? 'last-of-type' : '';
+            div(class="connection " + isLastOfType)
               if(Object.keys(connection.relationship).length > 0)
-                div(class="connection-data " + (previousConnection == connection.relationship.label ? 'as-previous' : ''))
+                - var asPrevious = previousConnection == connection.relationship.label ? 'as-previous' : '';
+                div(class="connection-data " + asPrevious)
                   p(class="connection-type connection-type-" + connection.relationship.type)
-                    span= connection.relationship.label
+                    span= connection.relationship.label + ":" + currentType + ":" + connectionTypes + ":" + isLastOfType
                   if(connection.relationship.metadata && connection.relationship.metadata.length > 0)
                     div(class="item-metadata")
                       each metadata in connection.relationship.metadata
